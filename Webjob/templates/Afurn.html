@@ -1,0 +1,21 @@
+{% include 'base.html'%}
+
+
+<img src="{{ fphoto }}" style="height: 400px;width: 400px;margin-right:20%;margin-top:100px;float:right;">
+
+<form action=" /furn/addOrderitem/{{ fid }}/" method="post">
+<div class="rightdata" style="margin-left: 30%;margin-top:100px;width: 20%;height: 20%;float:left;">
+    <h1>家具信息</h1>
+    <h3>家具名称：{{ fname }}</h3>
+    <h3>家具价格：{{ fprice }}</h3>
+    <h3>家具类别：{{ fcate }}</h3>
+    <h3>家具余量：{{ fnum }}</h3>
+    <h3>家具描述：{{ fdes }}</h3>
+    <input type="text" class="num" id="num" name="num" placeholder="购买数量">
+
+    <br><br>
+    <button id="btn">添加到购物车</button>
+</div>
+</form>
+
+

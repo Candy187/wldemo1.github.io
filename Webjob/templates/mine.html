@@ -1,0 +1,59 @@
+{% load static %}
+
+{% include 'base.html'%}
+
+{% block ext_css %}
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+{% endblock %}
+
+<h2 class="text-center">购买记录</h2>
+  <br>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-1">
+              <a class="btn btn-default" type="button" href="/furn/mine" style="margin-left: 48%">购买记录</a>
+          </div>
+          <div class="col-lg-1">
+          </div>
+          <div class="col-lg-1">
+              <a class="btn btn-default" type="button" href="/furn/look" style="margin-left: 48%">浏览记录</a>
+          </div>
+      </div>
+  </div>
+  <br><br>
+
+<div class="table-responsive" style="width:80%;margin-left: 10%;">
+       <table class="table table-striped table-bordered">
+         <thead style="background-color: aliceblue;">
+           <tr>
+             <th class="text-center">家具名称</th>
+			 <th>价格</th>
+			 <th>类别</th>
+			 <th>余量</th>
+			 <th>购买数量</th>
+			 <th>查看详情</th>
+           </tr>
+         </thead>
+         <tbody>
+         {% for f in glist %}
+
+           <tr>
+             <td class="text-center">{{ f.name }}</td>
+             <td>{{f.price}}</td>
+			 <td>{{f.category}}</td>
+			 <td>{{f.num}}</td>
+			 <td>{{ f.buynum }}</td>
+			 <td><button><a href="/furn/AFurn/{{ f.o_fid}}/">查看详情</a></button></td>
+           </tr>
+
+         {% endfor %}
+         </tbody>
+       </table>
+</div>
+
+
+{% block ext_js %}
+    <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}

@@ -1,0 +1,10 @@
+/*用于store.html*/
+
+
+.fli{width:20%;border: 1px solid #E99C2F;float: left;margin:50px 0 0 60px;}
+.flia{width:100%;height: 100%;color: black;}
+a:hover{background-color:#E99C2F;}
+
+ul>li{width:5%;float: left;font-size: 9px;font-weight: 500;}
+ul>li>a{font-size: 22px;color: #626161;}
+ul>li>a:hover{background-color: #E99C2F;color: #FFFFFF}

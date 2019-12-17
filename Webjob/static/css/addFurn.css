@@ -1,0 +1,7 @@
+/*增加商品页面*/
+body{background-color: #F8F9FD;color: #6A6969;}
+a{display: block;text-decoration: none;text-align:center;}
+.content{margin:100px auto;width:50%;height:600px;background-color: #FFFFFF;border: 1px solid #C1C1C1;border-radius:25px ;}
+#btn{width:220px;height:42px;margin-left: 280px;border: 1px solid #E99C2F;border-radius:25px ;background-color:#E99C2F;}
+span{margin-left: 250px;}
+form{margin-top: 50px;}

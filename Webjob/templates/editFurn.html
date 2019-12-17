@@ -1,0 +1,36 @@
+{% load static %}
+
+{% include 'base.html'%}
+
+{% block ext_css %}
+    <link rel="stylesheet" href={% static 'css/addFurn.css' %}>
+{% endblock %}
+
+
+
+<form action="/furn/editFurn/{{ fid }}" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <span>家具名：{{ furnname }}</span>
+    <br><br>
+    <span>单价：</span>
+    <input type="text" name="fprice" placeholder="请输入单个价格">
+    <br><br>
+    <span>类别：{{ furncate }}</span>
+    <br><br>
+    <span>数目：</span>
+    <input type="text" name="fnum" placeholder="请输入家具数量">
+    <br><br>
+    <span>相关描述：</span>
+    <input type="text" name="fdes" placeholder="请输入相关描述，可不填写">
+    <br><br>
+    <button id="btn">修改</button>
+
+
+</form>
+<br>
+<span>{{ msg }}</span>
+<br><br>
+<button id="btn"><a href="{% url 'furn:myFurn' %}">返回</a></button>
+

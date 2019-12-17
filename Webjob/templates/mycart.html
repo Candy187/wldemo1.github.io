@@ -1,0 +1,56 @@
+{% load static %}
+
+{% include 'base.html'%}
+
+{% block ext_css %}
+    <link rel="stylesheet" href={% static 'css/addFurn.css' %}>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+{% endblock %}
+
+<h3 class="text-center">{{ msg }}</h3><br>
+
+<div class="table-responsive" style="width:80%;margin-left: 10%;">
+       <table class="table table-striped table-bordered">
+         <thead style="background-color: aliceblue;">
+           <tr>
+             <th class="text-center">家具名称</th>
+			 <th>价格</th>
+			 <th>类别</th>
+			 <th>余量</th>
+			 <th>购买数量</th>
+			 <th>删除</th>
+           </tr>
+         </thead>
+         <tbody>
+         {% for f in flist %}
+
+           <tr>
+             <td class="text-center">{{ f.name }}</td>
+             <td>{{f.price}}</td>
+			 <td>{{f.category}}</td>
+			 <td>{{f.num}}</td>
+			 <td>{{ f.buynum }}</td>
+			 <td><button><a href="/furn/deleteorderitem/{{ f.o_oid}}/">删除</a></button></td>
+           </tr>
+
+         {% endfor %}
+         </tbody>
+       </table>
+</div>
+
+<h3 class="text-center">当前总计：{{ money }}元</h3>
+
+<div class="container">
+      <div class="row">
+          <div class="col-lg-5"></div>
+          <div class="col-lg-1">
+              <a class="btn btn-default" type="button" href="/furn/pay/" style="margin-left: 48%">去支付</a>
+          </div>
+      </div>
+  </div>
+
+
+{% block ext_js %}
+    <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}

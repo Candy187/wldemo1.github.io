@@ -1,0 +1,11 @@
+body{background-color: #F8F9FD;color: #6A6969;}
+a{display: block;text-decoration: none;text-align:center;}
+
+/*注册页面*/
+.register-content{margin:100px auto;width:50%;height:500px;background-color: #FFFFFF;border: 1px solid #C1C1C1;border-radius:25px ;}
+h2{text-align: center;margin:20px auto 30px;}
+input{width:220px;height:38px;margin: 10px 10px;border: 1px solid #E99C2F;border-radius:25px ;text-indent: 10px;}
+#phoneMsg,#usernameMsg,#passwordMsg,#confirmMsg,font{font-size: 15px;}
+.re-table{padding-left:100px;}
+#re-btn{width:220px;height:42px;margin-left: 280px;border: 1px solid #E99C2F;border-radius:25px ;background-color:#E99C2F;}
+

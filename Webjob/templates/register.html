@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Furniture-Register</title>
+        {% block ext_css %}
+            <link rel="stylesheet" href={% static 'css/register.css' %}>
+        {% endblock %}
+
+	</head>
+	<body>
+		<div class="register-content">
+			<h2>新用户注册</h2>
+            <form action=" {% url 'furn:register' %}" method="post" enctype="multipart/form-data" onsubmit="return Checkform();">
+
+            {% csrf_token %}
+				<table class="re-table">
+					<tr>
+						<td><input type="text" class="textinput" id="phonenumber" name="phonenumber" onkeyup="checkPhoneNumber();" placeholder="手机号"></td>
+						<td><span id="phoneMsg"></span>
+						<span>请输入有效的手机号码</span></td>
+					</tr>
+                    <tr>
+						<td><input type="text" class="textinput" id="email" name="email" onkeyup="checkEmail();" placeholder="邮箱"></td>
+						<td><span id="emailMsg"></span>
+						<span>请输入有效的邮箱</span></td>
+					</tr>
+					<tr>
+						<td><input type="text" class="textinput" id="username" name="usernumber" onkeyup="checkUsername();" placeholder="用户名"></td>
+						<td><span id="usernameMsg"></span>
+						<font>字母数字下划线1到10位，不能以数字开始</font></td>
+					</tr>
+					<tr>
+						<td><input type="password" class="textinput" id="password" name="password" onkeyup="checkPassword();" placeholder="密码"></td>
+						<td><span id="passwordMsg"></span>
+						<span>密码请设置6-16位字符</span></td>
+					</tr>
+					<tr>
+						<td><input type="password" class="textinput" id="repassword" name="repassword" onkeyup="checkConfirm();" placeholder="重复密码"></td>
+						<td><span id="confirmMsg"></span>
+						<span>密码请设置6-16位字符</span></td>
+					</tr>
+					<table>
+						<tr>
+							<td><button name="submit" id="re-btn">注册</button></td>
+						</tr>
+					</table>
+				</table>
+			</form>
+
+
+		</div>
+	</body>
+
+{% block ext_js %}
+    <script type="text/javascript" src={% static 'js/register_form.js' %}></script>
+{% endblock %}
+
+</html>

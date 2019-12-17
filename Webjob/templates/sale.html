@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+    <title>ErrorList</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+
+  <body>
+  <h2 class="text-center">销售列表</h2>
+  <br>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-1">
+              <a class="btn btn-default" type="button" href="/furn/myFurn" style="margin-left: 48%">返回主页</a>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-1">
+              <a class="btn btn-default" type="button" href="/furn/logout" style="margin-left: 48%">退出登陆</a>
+          </div>
+      </div>
+  </div>
+  <br><br>
+
+
+      <div class="table-responsive" style="width:80%;margin-left: 10%;">
+       <table class="table table-striped table-bordered">
+         <thead style="background-color: aliceblue;">
+           <tr>
+             <th>家具编号</th>
+             <th class="text-center">家具名称</th>
+			 <th>价格</th>
+			 <th>类别</th>
+			 <th>余量</th>
+			 <th>已销售</th>
+           </tr>
+         </thead>
+         <tbody>
+         {% for f in flist %}
+
+           <tr>
+             <td>{{ f.fid }}</td>
+             <td class="text-center">{{ f.fname }}</td>
+             <td>{{f.fprice}}</td>
+			 <td>{{f.fcategory}}</td>
+			 <td>{{f.fnum}}</td>
+			 <td>{{ f.fsale }}</td>
+           </tr>
+
+         {% endfor %}
+         </tbody>
+       </table>
+      </div>
+
+
+
+    <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

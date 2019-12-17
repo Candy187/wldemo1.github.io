@@ -1,0 +1,39 @@
+{% load static %}
+
+{% include 'base.html'%}
+
+{% block ext_css %}
+    <link rel="stylesheet" href={% static 'css/store.css' %}>
+{% endblock %}
+
+<br>
+<ul class="nav">
+   <li><a href="/furn/store/">全部</a></li>
+   <li><a href="/furn/showBed/">床</a></li>
+   <li><a href="/furn/showFood/">餐桌椅</a></li>
+   <li><a href="/furn/showRobe/">衣柜</a></li>
+   <li><a href="/furn/showLocker/">储物家具</a></li>
+</ul>
+
+<br><br>
+<span>{{ msg }}</span>
+<ul>
+
+    {% for f in furn_list %}
+        {% if f.fnum > 0 %}
+
+        <li class="fli">
+            <a href="/furn/AFurn/{{ f.fid}}/" class="flia" >
+                <br>
+                <img src="/static/furnphoto/{{ f.fphoto.url }}">
+                <p>{{ f.fname }}</p>
+                <p>价格：{{ f.fprice }}</p>
+                <p>余量：{{ f.fnum }}</p><br>
+            </a>
+        </li>
+
+        {% endif %}
+    {% endfor %}
+
+</ul>
+

@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddFurn</title>
+
+    {% block ext_css %}
+        <link rel="stylesheet" href={% static 'css/addFurn.css' %}>
+    {% endblock %}
+
+</head>
+<body>
+
+<div class="content">
+<form action=" {% url 'furn:addFurn' %}" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <span>家具名：</span>
+    <input type="text" name="fname" placeholder="请输入家具名称">
+    <br><br><br>
+    <span>单价：</span>
+    <input type="text" name="fprice" placeholder="请输入单个价格">
+    <br><br><br>
+    <span>类别：</span>
+    <input type="radio" name="fcate" value="床" checked="checked">床
+    <input type="radio" name="fcate" value="餐桌椅">餐桌椅
+    <input type="radio" name="fcate" value="衣柜">衣柜
+    <input type="radio" name="fcate" value="储物家具">储物家具
+    <br><br><br>
+    <span>数目：</span>
+    <input type="text" name="fnum" placeholder="请输入家具数量">
+    <br><br><br>
+    <span>家具图片：</span>
+    <input type="file" name="fphoto">
+    <br><br><br>
+    <span>相关描述：</span>
+    <input type="text" name="fdes" placeholder="请输入相关描述，可不填写">
+    <br><br><br>
+    <span>{{ msg }}</span>
+    <br><br>
+    <button id="btn">添加家具</button>
+
+
+</form>
+</div>
+
+</body>

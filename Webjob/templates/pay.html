@@ -1,0 +1,30 @@
+{% load static %}
+
+{% include 'base.html'%}
+
+{% block ext_css %}
+    <link rel="stylesheet" href={% static 'css/addFurn.css' %}>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+{% endblock %}
+
+<form action=" {% url 'furn:addData' %}" method="post">
+
+    <span>收货人姓名：</span>
+    <input type="text" name="rname" placeholder="请输入收货人姓名">
+    <br><br><br>
+    <span>收货地址：</span>
+    <input type="text" name="raddress" placeholder="请输入收货地址">
+    <br><br><br>
+    <span>收货人电话</span>
+    <input type="text" name="rphone" placeholder="请输入收货人电话">
+
+    <button id="submit">支付</button>
+
+
+</form>
+
+
+{% block ext_js %}
+    <script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
