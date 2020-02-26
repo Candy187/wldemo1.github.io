@@ -1,4 +1,4 @@
-# wldemo1.github.io
+# 使用Django框架设计和实现一个家具购买网站
 
 使用Django框架设计和实现一个家具购买网站
 基本功能
